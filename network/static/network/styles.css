@@ -1,0 +1,248 @@
+/* no shadowin on text div !*/
+:root {
+  --min_width: 200px;
+  --grid-gap: 22px;
+  --3rows-height: 644px;
+}
+
+body {
+  background: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 59%, rgba(217,236,255,0.46551120448179273) 87%, rgba(255,184,184,0.39548319327731096) 100%);  font-size: 14px;
+}
+
+nav {  
+  position: fixed;
+  left: 0px;
+  top: 22px;
+  padding-left: 22px;
+  padding-right: 11px;
+  width: min-content;
+  height: min-content;
+  background-color: rgb(255, 255, 255, 0.4);
+  border-radius: 0 20px 25px 0;
+  z-index: 1020;
+}
+
+#paginator {
+  z-index: 1019;
+  position: absolute; 
+  right: 0; 
+  top: 22px; 
+}
+
+img {
+  filter: sepia(30%) hue-rotate(210deg) saturate(60%);
+  /*filter: grayscale(100%) hue-rotate(45deg);*/
+}
+
+.filter {
+  filter: sepia(30%) hue-rotate(210deg) saturate(60%);
+}
+
+.profile-pic .mask-layer {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  padding: 22px;
+  background-color: rgb(128 128 128 /11%);
+  display: none;
+  cursor: pointer;
+}
+.profile-pic .mask-layer span{
+  color: grey;
+}
+.profile-pic:hover .mask-layer {
+  display: block;
+}
+
+.dropdown-menu {
+  margin-top: 33px;
+  margin-left: 1.5px;
+  min-width: fit-content !important;
+}
+
+@media (min-width: 576px) {
+  .dropdown-toggle {
+    display: none;
+  }
+  .dropdown:hover > .dropdown-menu {
+  display: block;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+@media (min-width: 675px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--min_width), var(--min_width)));
+    grid-auto-rows: var(--min_width);
+    grid-auto-flow: row dense;
+    justify-content: center;
+
+    /*grid-template-rows: repeat(auto-fit, minmax(var(--min_width), var(--min_width)));
+    grid-auto-columns: var(--min_width);
+    grid-auto-flow: column dense;
+    justify-content: left;*/
+
+    grid-gap: var(--grid-gap);
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}
+
+@media (max-width: 675px) {
+  .grid {
+    grid-template-columns: var(--min_width);
+    grid-auto-rows: auto;
+    grid-auto-flow: row dense;
+    justify-content: center;
+  }
+}
+
+.card {
+  border: none !important;
+  border-radius: 0% !important;
+  min-width: var(--min_width);
+}
+
+@media (max-width: 675px) {
+  .card {
+    box-shadow: none !important;
+  }
+
+  .card-image {
+    box-shadow : 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+
+  .card-body {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+  }
+}
+
+.card-top, .card-right, .card-bottom, .card-left {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 675px) {
+
+  .card-top .card-left .card-bottom .card-right {
+    flex-direction: column;
+    grid-column: auto / span 1;
+    grid-row: auto / span 2;
+    max-width: var(--min_width);
+  }
+
+}
+
+@media (min-width: 675px) {
+  .card-top {
+    flex-direction: column;
+    grid-column: auto / span 1;
+    grid-row: auto / span 2;
+  }
+
+  .card-bottom {
+    flex-direction: column-reverse;
+    grid-column: auto / span 1;
+    grid-row: auto / span 3;
+  }
+
+  .card-right {
+    flex-direction: row-reverse;
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+    min-width: var(--min_width)*2;
+  }
+
+  .card-left {
+    flex-direction: row;
+    grid-column: auto / span 3;
+    grid-row: auto / span 1;
+    min-width: var(--min_width)*3;
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .card-first {
+    height: var(--3rows-height);
+  }
+}
+
+.card-top .card-image {
+  min-width: var(--min_width);
+  width: min-content;
+}
+
+.card-left .card-image {
+  min-width: var(--min_width);
+  width: min-content;
+}
+
+.card-bottom .card-image {
+  min-width: var(--min_width);
+  width: min-content;
+}
+
+.card-right .card-image {
+  min-width: var(--min_width);
+  width: min-content;
+}
+
+.card-body {
+  background-color: white !important;
+}
+
+.xshadow {
+  position: relative;
+  background: linear-gradient(0deg, #000, #262626);
+}
+
+.xshadow:before, .xshadow:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.xshadow:after {
+  filter: blur(3px);
+}
+
+@keyframes animate {
+  0%
+  {
+    background-position: 0 0;
+  }
+  50%
+  {
+    background-position: 300% 0;
+  }
+  100%
+  {
+    background-position: 0 0;
+  }
+}
+
+.btn-like {
+  fill: black;
+  transition: fill .4s ease-out;
+  cursor: pointer;
+}
+
+.btn-like.active {
+  fill: url(#gradient2);
+  transition: fill .4s ease-in;
+}
