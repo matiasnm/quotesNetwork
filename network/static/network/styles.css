@@ -61,6 +61,11 @@ img {
   min-width: fit-content !important;
 }
 
+.dropdown-menu.show{
+  inset: unset !important;
+  transform: translate3d(1.5px, 55px, 0px) !important;
+}
+
 @media (min-width: 576px) {
   .dropdown-toggle {
     display: none;
