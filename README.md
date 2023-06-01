@@ -1,8 +1,10 @@
 ## A simple social network deploy with Django
 
 ### Project Name: Quotes
-This is Project #4 for the CS50W course. The project utilizes Python with Django, as well as HTML, CSS with Bootstrap, and plain JavaScript. 
-[Preview](http://matiasnm.github.io/network/README.png)
+This is Project #4 for the CS50W course. The project utilizes Python with Django, as well as HTML, CSS with Bootstrap, and plain JavaScript.
+
+![Preview](http://matiasnm.github.io/network/README.png)
+
 ### Demo
 Try it [here](http://matiasnm.pythonanywhere.com/)
 
