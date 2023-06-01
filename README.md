@@ -3,7 +3,7 @@
 ### Project Name: Quotes
 This is Project #4 for the CS50W course. The project utilizes Python with Django, as well as HTML, CSS with Bootstrap, and plain JavaScript.
 
-![Preview](http://github.com/matiasnm/network/README.png)
+![Preview](https://github.com/matiasnm/network/blob/main/README.png)
 
 ### Demo
 Try it [here](http://matiasnm.pythonanywhere.com/)
